@@ -41,4 +41,13 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(0);
     });
 
+    it("increase the quality of Aged Brie", () => {
+        const item = new Item("Aged Brie", 5, 10);
+
+        let items= [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(11);
+    })
+
 });
