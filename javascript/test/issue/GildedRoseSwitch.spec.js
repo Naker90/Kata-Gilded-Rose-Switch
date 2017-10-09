@@ -20,4 +20,14 @@ describe("GildedRoseSwitch Should", () => {
 
         expect(item.getSellIn()).to.equal(sellIn - 1);
     });
+
+    it("reduce the value of the Quality", () => {
+        const item = new Item("anyItem", sellIn, quality);
+
+        let items = [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(quality - 1);
+    });
+
 });
