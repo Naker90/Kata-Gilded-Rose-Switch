@@ -5,29 +5,31 @@ const GildedRoseSwitch = require('../../src/issue/GildedRoseSwitch');
 
 describe("GildedRoseSwitch Should", () => {
 
-    let sellIn, quality;
-
-    beforeEach("initialize the values of SellIn and Quality ​​for each test", () => {
-        sellIn = 5;
-        quality = 10;
-    });
-
     it("reduce the value of the SellIn", () => {
-        const item = new Item("anyItem", sellIn, quality);
+        const item = new Item("anyItem", 5, 10);
 
         let items = [item];
         new GildedRoseSwitch(items).updateQuality();
 
-        expect(item.getSellIn()).to.equal(sellIn - 1);
+        expect(item.getSellIn()).to.equal(4);
     });
 
     it("reduce the value of the Quality", () => {
-        const item = new Item("anyItem", sellIn, quality);
+        const item = new Item("anyItem", 5, 10);
 
         let items = [item];
         new GildedRoseSwitch(items).updateQuality();
 
-        expect(item.getQuality()).to.equal(quality - 1);
+        expect(item.getQuality()).to.equal(9);
+    });
+
+    it("reduce quality twice as fast when the SellIn is less or equal to 0", () => {
+        const item = new Item("anyItem", 0, 10);
+
+        let items= [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(8);
     });
 
 });
