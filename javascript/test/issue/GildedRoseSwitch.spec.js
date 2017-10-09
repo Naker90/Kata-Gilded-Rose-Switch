@@ -32,4 +32,13 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(8);
     });
 
+    it("not leave the quality negative", () => {
+        const item = new Item("anyItem", 5, 0);
+
+        let items= [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(0);
+    });
+
 });
