@@ -57,6 +57,15 @@ describe("GildedRoseSwitch Should", () => {
         new GildedRoseSwitch(items).updateQuality();
 
         expect(item.getQuality()).to.equal(50);
-    })
+    });
+
+    it("always have the value 80 for the quality of Sulfuras", () => {
+        const item = new Item("Sulfuras, Hand of Ragnaros", 5, 10);
+
+        let items= [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(80);
+    });
 
 });
