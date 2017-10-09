@@ -48,6 +48,15 @@ describe("GildedRoseSwitch Should", () => {
         new GildedRoseSwitch(items).updateQuality();
 
         expect(item.getQuality()).to.equal(11);
+    });
+
+    it("not increase the quality more than 50", () => {
+        const item = new Item("Aged Brie", 5, 50);
+
+        let items= [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(50);
     })
 
 });
