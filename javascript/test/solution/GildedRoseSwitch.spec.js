@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 
-const Item = require('../../src/issue/Item2');
-const GildedRoseSwitch = require('../../src/issue/GildedRoseSwitch2');
+const Item = require('../../src/solution/Item');
+const GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
 
 const _updateQuality = (item) => {
     let items = [item];
