@@ -3,6 +3,7 @@ const expect = require('chai').expect;
 const Item = require('../../src/solution/Item');
 const GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
 const AgedBrie = require('../../src/solution/AgedBrie');
+const Sulfuras = require('../../src/solution/Sulfuras');
 
 const _updateQuality = (item) => {
     let items = [item];
@@ -60,7 +61,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given sulfuras always have the value 80 for the quality", () => {
-        const item = new Item("Sulfuras, Hand of Ragnaros", 5, 10);
+        const item = new Sulfuras("Sulfuras, Hand of Ragnaros", 5, 10);
 
         _updateQuality(item);
 
