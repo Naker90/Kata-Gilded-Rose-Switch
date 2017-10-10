@@ -12,6 +12,10 @@ Item.prototype.updateQuality = function() {
     }
 };
 
+Item.prototype.incrementQuality = function(value) {
+    if(this.getQuality() < 50) {this.setQuality(this.getQuality() + value);}
+};
+
 Item.prototype.print =  function(){
     return this.name + ", " + this.sellIn + ", " + this.quality;
 };

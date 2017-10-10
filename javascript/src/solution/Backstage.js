@@ -15,13 +15,9 @@ Backstage.prototype.updateQuality = function() {
         this.setQuality(0);
     }else {
         if (this.getSellIn() <= 5) {
-            if (this.getQuality() < 50) {
-                this.setQuality(this.getQuality() + 3);
-            }
+            this.incrementQuality(3);
         } else if (this.getSellIn() <= 10) {
-            if (this.getQuality() < 50) {
-                this.setQuality(this.getQuality() + 2);
-            }
+            this.incrementQuality(2);
         }
     }  
 };
