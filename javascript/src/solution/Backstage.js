@@ -9,8 +9,6 @@ Backstage = function(name, sellIn, quality) {
 Backstage.prototype = Object.create(Item.prototype);
 
 Backstage.prototype.updateQuality = function() {
-    this.setSellIn(this.getSellIn()-1);
-
     if(this.getSellIn() <= 0){
         this.setQuality(0);
     }else {

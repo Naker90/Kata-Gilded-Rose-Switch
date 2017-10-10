@@ -4,6 +4,11 @@ Item = function(name, sellIn,quality) {
     this.quality = quality;
 };
 
+Item.prototype.update = function() {
+  this.updateQuality();
+  this.decrementSellIn();
+};
+
 Item.prototype.updateQuality = function() {
     if(this.getQuality() > 0){
         if(this.getSellIn() <= 0){
@@ -14,6 +19,10 @@ Item.prototype.updateQuality = function() {
 
 Item.prototype.incrementQuality = function(value) {
     if(this.getQuality() < 50) {this.setQuality(this.getQuality() + value);}
+};
+
+Item.prototype.decrementSellIn = function() {
+    this.setSellIn(this.getSellIn()-1);
 };
 
 Item.prototype.print =  function(){
