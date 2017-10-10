@@ -68,4 +68,13 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(80);
     });
 
+    it("increment quality by 2 when the SellIn is less or equal to 10", () => {
+        const item = new Item("Backstage passes to a TAFKAL80ETC concert", 9, 10);
+
+        let items= [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(12);
+    });
+
 });
