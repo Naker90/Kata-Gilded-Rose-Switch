@@ -86,4 +86,14 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(13);
     });
 
+
+    it("given backstage set quality to 0 when the SellIn expires", () => {
+        const item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10);
+
+        let items= [item];
+        new GildedRoseSwitch(items).updateQuality();
+
+        expect(item.getQuality()).to.equal(0);
+    });
+
 });
