@@ -14,7 +14,7 @@ const _updateQuality = (item) => {
 describe("GildedRoseSwitch Should", () => {
 
     it("reduce the value of the SellIn", () => {
-        const item = new Item("anyItem", 5, 10);
+        const item = new Item(5, 10);
 
         _updateQuality(item);
 
@@ -22,7 +22,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("reduce the value of the Quality", () => {
-        const item = new Item("anyItem", 5, 10);
+        const item = new Item(5, 10);
 
         _updateQuality(item);
 
@@ -30,7 +30,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("reduce quality twice as fast when the SellIn is less or equal to 0", () => {
-        const item = new Item("anyItem", 0, 10);
+        const item = new Item(0, 10);
 
         _updateQuality(item);
 
@@ -38,7 +38,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("not leave the quality negative", () => {
-        const item = new Item("anyItem", 5, 0);
+        const item = new Item(5, 0);
 
         _updateQuality(item);
 
@@ -46,7 +46,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given aged brie increase the quality", () => {
-        const item = new AgedBrie("Aged Brie", 5, 10);
+        const item = new AgedBrie(5, 10);
 
         _updateQuality(item);
 
@@ -54,7 +54,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given aged brie not increase the quality more than 50", () => {
-        const item = new AgedBrie("Aged Brie", 5, 50);
+        const item = new AgedBrie(5, 50);
 
         _updateQuality(item);
 
@@ -62,7 +62,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given sulfuras always have the value 80 for the quality", () => {
-        const item = new Sulfuras("Sulfuras, Hand of Ragnaros", 5, 10);
+        const item = new Sulfuras(5, 10);
 
         _updateQuality(item);
 
@@ -70,7 +70,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given backstage increment quality by 2 when the SellIn is less or equal to 10", () => {
-        const item = new Backstage("Backstage passes to a TAFKAL80ETC concert", 9, 10);
+        const item = new Backstage(9, 10);
 
         _updateQuality(item);
 
@@ -78,7 +78,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given backstage increment quality by 3 when the SellIn is less or equal to 5", () => {
-        const item = new Backstage("Backstage passes to a TAFKAL80ETC concert", 4, 10);
+        const item = new Backstage(4, 10);
 
         _updateQuality(item);
 
@@ -87,7 +87,7 @@ describe("GildedRoseSwitch Should", () => {
 
 
     it("given backstage set quality to 0 when the SellIn expires", () => {
-        const item = new Backstage("Backstage passes to a TAFKAL80ETC concert", 0, 10);
+        const item = new Backstage(0, 10);
 
         _updateQuality(item);
 

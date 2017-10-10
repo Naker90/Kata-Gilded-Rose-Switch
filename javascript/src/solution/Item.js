@@ -1,5 +1,4 @@
-Item = function(name, sellIn,quality) {
-    this.name = name;
+Item = function(sellIn,quality) {
     this.sellIn = sellIn;
     this.quality = quality;
 };
@@ -26,11 +25,7 @@ Item.prototype.decrementSellIn = function() {
 };
 
 Item.prototype.print =  function(){
-    return this.name + ", " + this.sellIn + ", " + this.quality;
-};
-
-Item.prototype.getName = function(){
-    return this.name;
+    return this.sellIn + ", " + this.quality;
 };
 
 Item.prototype.getSellIn = function(){

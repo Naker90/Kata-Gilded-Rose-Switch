@@ -1,7 +1,6 @@
 const Item = require('./Item');
 
-AgedBrie = function (name, sellIn, quality) {
-  this.name = name;
+AgedBrie = function (sellIn, quality) {
   this.sellIn = sellIn;
   this.quality = quality;
 };
