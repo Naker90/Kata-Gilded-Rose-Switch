@@ -4,6 +4,7 @@ const Item = require('../../src/solution/Item');
 const GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
 const AgedBrie = require('../../src/solution/AgedBrie');
 const Sulfuras = require('../../src/solution/Sulfuras');
+const Backstage = require('../../src/solution/Backstage');
 
 const _updateQuality = (item) => {
     let items = [item];
@@ -69,7 +70,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given backstage increment quality by 2 when the SellIn is less or equal to 10", () => {
-        const item = new Item("Backstage passes to a TAFKAL80ETC concert", 9, 10);
+        const item = new Backstage("Backstage passes to a TAFKAL80ETC concert", 9, 10);
 
         _updateQuality(item);
 
@@ -77,7 +78,7 @@ describe("GildedRoseSwitch Should", () => {
     });
 
     it("given backstage increment quality by 3 when the SellIn is less or equal to 5", () => {
-        const item = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10);
+        const item = new Backstage("Backstage passes to a TAFKAL80ETC concert", 4, 10);
 
         _updateQuality(item);
 
@@ -86,7 +87,7 @@ describe("GildedRoseSwitch Should", () => {
 
 
     it("given backstage set quality to 0 when the SellIn expires", () => {
-        const item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10);
+        const item = new Backstage("Backstage passes to a TAFKAL80ETC concert", 0, 10);
 
         _updateQuality(item);
 
