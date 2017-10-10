@@ -41,7 +41,7 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(0);
     });
 
-    it("increase the quality of Aged Brie", () => {
+    it("given aged brie increase the quality", () => {
         const item = new Item("Aged Brie", 5, 10);
 
         let items= [item];
@@ -50,7 +50,7 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(11);
     });
 
-    it("not increase the quality more than 50", () => {
+    it("given aged brie not increase the quality more than 50", () => {
         const item = new Item("Aged Brie", 5, 50);
 
         let items= [item];
@@ -59,7 +59,7 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(50);
     });
 
-    it("always have the value 80 for the quality of Sulfuras", () => {
+    it("given sulfuras always have the value 80 for the quality", () => {
         const item = new Item("Sulfuras, Hand of Ragnaros", 5, 10);
 
         let items= [item];
@@ -68,7 +68,7 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(80);
     });
 
-    it("increment quality by 2 when the SellIn is less or equal to 10", () => {
+    it("given backstage increment quality by 2 when the SellIn is less or equal to 10", () => {
         const item = new Item("Backstage passes to a TAFKAL80ETC concert", 9, 10);
 
         let items= [item];
@@ -77,7 +77,7 @@ describe("GildedRoseSwitch Should", () => {
         expect(item.getQuality()).to.equal(12);
     });
 
-    it("increment quality by 3 when the SellIn is less or equal to 5", () => {
+    it("given backstage increment quality by 3 when the SellIn is less or equal to 5", () => {
         const item = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10);
 
         let items= [item];
