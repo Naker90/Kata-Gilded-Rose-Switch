@@ -1,4 +1,4 @@
-Item = function(sellIn,quality) {
+const Item = function(sellIn,quality) {
     this.sellIn = sellIn;
     this.quality = quality;
 };

@@ -1,6 +1,6 @@
 const Item = require('./Item');
 
-Backstage = function(sellIn, quality) {
+const Backstage = function(sellIn, quality) {
   this.sellIn = sellIn;
   this.quality = quality;
 };
