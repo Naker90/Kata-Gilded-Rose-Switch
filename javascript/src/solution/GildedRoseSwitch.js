@@ -5,13 +5,6 @@ GildedRoseSwitch = function(items){
             let item = items[index];
 
             switch (item.getName()){
-                case "Aged Brie":
-                    if(item.getSellIn() >= 0){
-                        if(item.getQuality() < 50) {item.setQuality(item.getQuality() + 1);}
-                    }else{
-                        updateItemGenericQuality(item);
-                    }
-                    break;
                 case "Sulfuras, Hand of Ragnaros":
                     if(item.getQuality() != 80){
                         item.setQuality(80);
