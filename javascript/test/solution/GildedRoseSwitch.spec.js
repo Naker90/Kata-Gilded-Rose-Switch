@@ -5,6 +5,7 @@ const GildedRoseSwitch = require('../../src/solution/GildedRoseSwitch');
 const AgedBrie = require('../../src/solution/AgedBrie');
 const Sulfuras = require('../../src/solution/Sulfuras');
 const Backstage = require('../../src/solution/Backstage');
+const Conjured = require('../../src/solution/Conjured');
 
 const _updateQuality = (item) => {
     let items = [item];
@@ -92,6 +93,14 @@ describe("GildedRoseSwitch Should", () => {
         _updateQuality(item);
 
         expect(item.getQuality()).to.equal(0);
+    });
+
+    it("given conjured decrement quality twice fast", () => {
+        const item = new Conjured(5, 10);
+
+        _updateQuality(item);
+
+        expect(item.getQuality()).to.equal(8);
     });
 
 });
